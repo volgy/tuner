@@ -1,4 +1,5 @@
 //! Tracer module
+#![allow(dead_code)]
 pub struct Tracer {
     name: String,
     start: std::time::Instant,

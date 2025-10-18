@@ -77,7 +77,7 @@ fn yin_pitch(
     let mut best_tau = None;
     while tau <= tau_max {
         if yin_buffer[tau] < threshold {
-            while tau + 1 <= tau_max && yin_buffer[tau + 1] < yin_buffer[tau] {
+            while tau < tau_max && yin_buffer[tau + 1] < yin_buffer[tau] {
                 tau += 1;
             }
             best_tau = Some(tau);
@@ -153,7 +153,7 @@ where
 
     let stream = device
         .build_input_stream(
-            &config,
+            config,
             move |data: &[T], _info| {
                 let samples: Vec<_> = data
                     .chunks_exact(n_channels)
