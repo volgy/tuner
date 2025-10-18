@@ -1,0 +1,10 @@
+[package]
+name = "tuner"
+version = "0.1.0"
+edition = "2024"
+description = "A simple example for YIN pitch detection in Rust"
+authors = ["Peter Volgyesi <peter.volgyesi@gmail.com>"]
+
+[dependencies]
+anyhow = "1.0.100"
+cpal = "0.16.0"
